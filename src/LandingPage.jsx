@@ -6,7 +6,6 @@ import Offer from "./Offer";
 
 const LandingPage = () => {
   const [timeLeft, setTimeLeft] = useState(0);
-  const youtubeUrl = "https://www.youtube.com/watch?v=CL9WpBhMZLs";
 
   useEffect(() => {
     const targetTime = new Date().getTime() + 24 * 60 * 60 * 1000;
@@ -37,18 +36,14 @@ const LandingPage = () => {
     return `${hours} : ${minutes} : ${seconds}`;
   };
 
-  const handleClick = () => {
-    window.open(youtubeUrl, "_blank");
-  };
+  
 
   return (
     <div className="landing-container" id="1">
       <header className="header">
         <div className="logo">
-          <h2>
-            Jumping <br />
-            <h1>JACK</h1>
-          </h2>
+          <h1>Jumping</h1>
+          <h2>JACK</h2>
         </div>
         <div className="promo">🔥Jump High, Earn $100</div>
         <div className="timer">{formatTime(timeLeft)} SEC</div>
@@ -65,19 +60,19 @@ const LandingPage = () => {
             src="./placeholder.jpeg"
             alt="Game Preview"
           />
-          <button onClick={handleClick} className="play-button">
+          <button  className="play-button">
             <img className="b-image" src="./ytbutton.png" alt="play" />
           </button>
-         
-            <video
-              className="hover-video"
-              src="/jumpingjacklanding.mp4"
-              muted
-              loop
-              playsInline
-              autoPlay
-            />
-             </div>
+
+          <video
+            className="hover-video"
+            src="/jumpingjacklanding.mp4"
+            muted
+            loop
+            playsInline
+            autoPlay
+          />
+        </div>
         <div className="cta-section">
           <Button />
         </div>

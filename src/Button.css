@@ -1,39 +1,64 @@
 .board-image {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .steam-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-  }
-  
-  .steam-button:hover {
-    transform: translateY(-6px);
-    transition: all 0.3s ease;
-  }
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.steam-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.steam-button:hover {
+  transform: translateY(-6px);
+  transition: all 0.3s ease;
+}
+.b-text1 {
+  position: relative;
+  bottom: 30vh;
+  font-size: 1.5rem;
+  background: #ffd633;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.b-text2 {
+  position: relative;
+  left: 2vw;
+  bottom: 29vh;
+  font-size: 2rem;
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.b-text2:hover {
+  transform: translateY(-8px);
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
   .b-text1 {
     position: relative;
-    bottom: 30vh;
-    font-size: 1.5rem;
-    background: #ffd633;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    bottom: 14vh;
+    font-size: 1rem;
+    font-weight: bold;
   }
   .b-text2 {
     position: relative;
-    left: 2vw;
-    bottom: 29vh;
-    font-size: 2rem;
+    left: 4vw;
+    bottom: 14vh;
+    font-size: 1.3rem;
     background: #ffffff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .steam-button:hover {
+    transform: translateY(-6px);
+    transition: all 0.3s ease;
   }
   .b-text2:hover {
     transform: translateY(-8px);
     transition: all 0.3s ease;
   }
+}

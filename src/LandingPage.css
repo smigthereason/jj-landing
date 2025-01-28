@@ -34,20 +34,20 @@
   font-weight: bold;
   transform: rotate(-20deg);
 }
-.logo h1 {
-  position: absolute;
-  top: 0.2vh;
-  font-size: 2.3rem;
+.logo h2 {
+  position: relative;
+  top: -11vh;
+  font-size: 3rem;
   text-transform: lowercase;
   background: linear-gradient(45deg, #ff6b6b, #ffd93d);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Makes the gradient visible on the text */
+  -webkit-text-fill-color: transparent;
 }
 
-.logo h2 {
-  position: absolute;
-  top: 0.2vh;
-  font-size: 1.3rem;
+.logo h1 {
+  position: relative;
+  bottom: 1vh;
+  font-size: 1.5rem;
   text-transform: lowercase;
   background: linear-gradient(45deg, #ff6b6b, #ffd93d);
   -webkit-background-clip: text;
@@ -125,7 +125,7 @@
   width: 97%;
   height: 97%;
   object-fit: cover;
-  border-radius: 3%; 
+  border-radius: 3%;
 }
 
 .b-image {
@@ -145,7 +145,7 @@
 }
 
 .video-frame:hover .place-image {
-  opacity: 0; 
+  opacity: 0;
 }
 
 .hover-video {
@@ -156,13 +156,13 @@
   height: 95%;
   object-fit: cover;
   z-index: 150;
-  border-radius: 3%; 
-  opacity: 0; 
+  border-radius: 3%;
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .video-frame:hover .hover-video {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .video-frame:hover .b-image {
@@ -176,22 +176,128 @@
   height: 10vh;
 }
 
-
-
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .landing-container {
+    background-image: url("/jack.jpeg");
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+  }
+
   .header {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+    height: 20vh;
   }
 
-  .game-title {
-    font-size: 2rem;
+  .logo h2 {
+    font-size: 3rem;
+    top: -7vh;
+    right: 2vw;
   }
 
-  .play-button {
-    width: 60px;
-    height: 60px;
+  .logo h1 {
     font-size: 1.5rem;
+    bottom: 0;
+    right: 5vw;
+  }
+
+  .promo {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    font-size: 1rem;
+    top: 12vh;
+  }
+
+  .timer {
+    position: relative;
+    width: 50vw;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    top: 16vh;
+    left: 30vw;
+  }
+
+  .main-content {
+    gap: 1rem;
+    padding: 0 1rem;
+    height: 100px;
+  }
+
+  .title-image {
+    top: 3vh;
+  }
+
+  .jack-image {
+    position: relative;
+    right: 30vw;
+    height: 40vh;
+  }
+
+  .video-frame {
+    width: 90%;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    bottom: 15vh;
+  }
+
+  .b-image {
+    width: 15vw;
+  }
+
+  .hover-video {
+    width: 90%;
+    height: 90%;
+  }
+
+  .cta-section {
+    bottom: 10vh;
+  }
+}
+
+
+@media (max-width: 480px) {
+  
+  .promo {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+  }
+
+
+  .main-content {
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .title-image {
+    top: 2vh;
+    height: 20vh;
+  }
+
+  
+
+  .video-frame {
+    width: 95%;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    bottom: 10vh;
+  }
+
+  .b-image {
+    width: 20vw;
+  }
+
+  .hover-video {
+    width: 85%;
+    height: 85%;
+  }
+
+  .cta-section {
+    bottom: 5vh;
   }
 }
