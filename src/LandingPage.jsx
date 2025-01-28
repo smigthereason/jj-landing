@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./LandingPage.css";
-import Button from "./Button";
-import Offer from "./Offer";
-import { handleClick } from "./eventHandlers";
+import Button from "./components/Button";
+import Offer from "./components/Offer";
+import { handleClick } from "./components/eventHandlers";
 
 const LandingPage = () => {
   const [timeLeft, setTimeLeft] = useState(0);

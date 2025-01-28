@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Offer from './Offer';
+import Offer from './components/Offer';
 import LandingPage from './LandingPage';
-import Footer from './Footer';
+import Footer from './components/Footer';
 
 const App = () => {
   return (

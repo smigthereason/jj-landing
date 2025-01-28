@@ -1,18 +1,18 @@
 import React from "react";
-import "./Button.css";
-import { handleButtonClick } from "./eventHandlers";
+import "../styles/Button.css";
+import { handleClick } from "./eventHandlers.jsx";
 
 const Button = () => {
   const url = "https://store.steampowered.com/app/3205090/Jumping_Jack/";
-
+  
   return (
-    <button
-      className="steam-button"
-      onClick={(e) => handleButtonClick(e, url)}
+    <button 
+      className="steam-button" 
+      onClick={(e) => handleClick(e, url)}
     >
-      <img
-        className="board-image"
-        src="./Images/board-fotor.png"
+      <img 
+        className="board-image" 
+        src="/Images/board-fotor.png" 
         alt="Steam Board"
       />
       <h4 className="b-text1">AVAILABLE FOR FREE!!!</h4>

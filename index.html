@@ -19,11 +19,15 @@
     
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="/src/main.jsx" as="script">
-    <link rel="preload" href="/src/index.css" as="style">
     
     <!-- Security -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self' 'unsafe-inline' 'unsafe-eval';
+                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                   img-src 'self' data: https:;
+                   font-src 'self' https://fonts.gstatic.com;
+                   connect-src 'self';">
     
     <!-- SEO -->
     <meta name="robots" content="index, follow">
@@ -38,6 +42,6 @@
   <body>
     <noscript>You need to enable JavaScript to run this application.</noscript>
     <div id="root" role="main" aria-label="Jumping Jack Application"></div>
-    <script type="module" src="/src/main.jsx" defer></script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
