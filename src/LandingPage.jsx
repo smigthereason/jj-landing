@@ -1,8 +1,8 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./LandingPage.css";
 import Button from "./Button";
 import Offer from "./Offer";
+import { handleClick } from "./eventHandlers";
 
 const LandingPage = () => {
   const [timeLeft, setTimeLeft] = useState(0);
@@ -36,8 +36,6 @@ const LandingPage = () => {
     return `${hours} : ${minutes} : ${seconds}`;
   };
 
-  
-
   return (
     <div className="landing-container" id="1">
       <header className="header">
@@ -49,28 +47,45 @@ const LandingPage = () => {
         <div className="timer">{formatTime(timeLeft)} SEC</div>
       </header>
       <div className="main-content">
-        <img className="title-image" src="./title-fotor.png" alt="title" />
+        <img
+          className="title-image"
+          src="./Images/title-fotor.png"
+          alt="Game Title"
+        />
         <div>
-          <img className="jack-image" src="./jack3-fotor.png" alt="jack" />
+          <img
+            className="jack-image"
+            src="./Images/jack3-fotor.png"
+            alt="Jumping Jack Character"
+          />
         </div>
         <div className="video-frame">
-          <img className="frame-image" src="./frame-fotor.png" alt="frame" />
+          <img
+            className="frame-image"
+            src="./Images/frame-fotor.png"
+            alt="Video Frame"
+          />
           <img
             className="place-image"
-            src="./placeholder.jpeg"
+            src="./Images/placeholder.jpeg"
             alt="Game Preview"
           />
-          <button  className="play-button">
-            <img className="b-image" src="./ytbutton.png" alt="play" />
+          <button className="play-button" onClick={handleClick}>
+            <img
+              className="b-image"
+              src="./Images/ytbutton.png"
+              alt="Play Video"
+            />
           </button>
 
           <video
             className="hover-video"
-            src="/jumpingjacklanding.mp4"
+            src="/Images/jumpingjacklanding.mp4"
             muted
             loop
             playsInline
             autoPlay
+            aria-label="Game Trailer"
           />
         </div>
         <div className="cta-section">
