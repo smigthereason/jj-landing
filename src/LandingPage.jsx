@@ -38,7 +38,7 @@ const LandingPage = () => {
   return (
     <div className="landing-container">
       <header className="header">
-        <div className="logo">Jumping JACK</div>
+        <div className="logo"><h2>Jumping <br /><h1>JACK</h1></h2></div>
         <div className="promo">🔥Jump High, Earn $100</div>
         <div className="timer">{formatTime(timeLeft)} SEC</div>
       </header>
