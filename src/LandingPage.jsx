@@ -1,13 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./LandingPage.css";
-import { FaYoutube } from "react-icons/fa6";
+import Button from "./Button";
+import Offer from "./Offer";
 
 const LandingPage = () => {
   const [timeLeft, setTimeLeft] = useState(0);
+  const youtubeUrl = "https://www.youtube.com/watch?v=CL9WpBhMZLs";
 
   useEffect(() => {
-    const targetTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours from now
+    const targetTime = new Date().getTime() + 24 * 60 * 60 * 1000;
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const difference = targetTime - now;
@@ -35,19 +37,24 @@ const LandingPage = () => {
     return `${hours} : ${minutes} : ${seconds}`;
   };
 
+  const handleClick = () => {
+    window.open(youtubeUrl, "_blank");
+  };
+
   return (
-    <div className="landing-container">
+    <div className="landing-container" id="1">
       <header className="header">
-        <div className="logo"><h2>Jumping <br /><h1>JACK</h1></h2></div>
+        <div className="logo">
+          <h2>
+            Jumping <br />
+            <h1>JACK</h1>
+          </h2>
+        </div>
         <div className="promo">🔥Jump High, Earn $100</div>
         <div className="timer">{formatTime(timeLeft)} SEC</div>
       </header>
       <div className="main-content">
-        <img
-          className="title-image"
-          src="./title-fotor.png"
-          alt="title"
-        />
+        <img className="title-image" src="./title-fotor.png" alt="title" />
         <div>
           <img className="jack-image" src="./jack3-fotor.png" alt="jack" />
         </div>
@@ -58,19 +65,24 @@ const LandingPage = () => {
             src="./placeholder.jpeg"
             alt="Game Preview"
           />
-          <div className="play-button">
-            {/* <img className="button-image" src="./ytbutton.png" alt="play" /> */}
-            <FaYoutube  />
-          </div>
-        </div>
+          <button onClick={handleClick} className="play-button">
+            <img className="b-image" src="./ytbutton.png" alt="play" />
+          </button>
+         
+            <video
+              className="hover-video"
+              src="/jumpingjacklanding.mp4"
+              muted
+              loop
+              playsInline
+              autoPlay
+            />
+             </div>
         <div className="cta-section">
-          <img className="board-image" src="./board-fotor.png" alt="board" />
-          <button className="steam-button">Play now on STEAM®</button>
+          <Button />
         </div>
       </div>
-      <footer className="footer">
-        +18 Only. By playing you agree to our <a href="/terms">TERMS</a>
-      </footer>
+      <Offer />
     </div>
   );
 };

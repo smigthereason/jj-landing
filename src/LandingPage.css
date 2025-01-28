@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Press+Start+2P&display=swap");
 
 .landing-container {
-  min-height: 100vh;
+  max-height: 500vh;
   width: 100vw;
   color: white;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   width: 100%;
   background-image: url("/jack.jpeg");
   background-size: 100% auto;
@@ -29,29 +28,35 @@
 
 .logo {
   position: absolute;
-  top: 0.2vh;
+  top: 0.4vh;
   max-height: 5vh;
   font-family: "Luckiest Guy", serif;
   font-weight: bold;
+  transform: rotate(-20deg);
+}
+.logo h1 {
+  position: absolute;
+  top: 0.2vh;
+  font-size: 2.3rem;
+  text-transform: lowercase;
   background: linear-gradient(45deg, #ff6b6b, #ffd93d);
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes the gradient visible on the text */
 }
-.logo h1{
-    position: absolute;
-    top: 0.2vh;
-    font-size: 2rem;
-    text-transform: lowercase;
 
-}
-.logo h2{
-    position: absolute;
-    top: 0.2vh;
-    font-size: 1rem;
-    text-transform: lowercase;
+.logo h2 {
+  position: absolute;
+  top: 0.2vh;
+  font-size: 1.3rem;
+  text-transform: lowercase;
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .promo {
+  position: absolute;
+  left: 40vw;
   background: rgba(255, 87, 34, 0.2);
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -60,6 +65,8 @@
 }
 
 .timer {
+  position: absolute;
+  left: 80vw;
   font-family: monospace;
   font-size: 1.2rem;
   background: rgba(0, 0, 0, 0.3);
@@ -69,15 +76,12 @@
 }
 
 .main-content {
-  min-height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
   position: relative;
   background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  overflow-y: hidden;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -90,6 +94,11 @@
   position: absolute;
   top: 5vh;
 }
+.jack-image {
+  position: relative;
+  top: 15vh;
+  right: 25vw;
+}
 
 .video-frame {
   position: relative;
@@ -101,108 +110,73 @@
   overflow: hidden;
 }
 
-.frame-image {
+.frame-image,
+.place-image,
+.b-image {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   z-index: 100;
+  transition: opacity 0.3s ease;
 }
 
-.video-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.video-frame:hover .video-thumbnail {
-  transform: scale(1.05);
-}
-.jack-image {
-  position: relative;
-  top: 15vh;
-  right: 25vw;
-}
 .place-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 97%;
   height: 97%;
   object-fit: cover;
+  border-radius: 3%; 
 }
 
-.button-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.705);
-    background: linear-gradient(145deg, #ff0000, #ff0000bb); 
-    border: none;
-    outline: none;
-
+.b-image {
+  top: 50%;
+  left: 50%;
+  width: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 200; /* Increased z-index to ensure it's on top of the video */
 }
 
-.button-image:hover {
-    box-shadow: 0 0 20px rgba(0, 170, 255, 0.9), 
-                0 0 40px rgba(0, 170, 255, 0.7),
-                0 0 60px rgba(0, 170, 255, 0.5); 
-    transform: translate(-50%, -50%) scale(1.1); 
+.b-image:hover {
+  opacity: 1;
+}
+
+.video-frame:hover .place-image {
+  opacity: 0; 
+}
+
+.hover-video {
+  position: absolute;
+  top: 1vh;
+  left: 1.5vw;
+  width: 95%;
+  height: 95%;
+  object-fit: cover;
+  z-index: 150;
+  border-radius: 3%; 
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+
+.video-frame:hover .hover-video {
+  opacity: 1; 
+}
+
+.video-frame:hover .b-image {
+  z-index: 250; /* Ensure the play button is on top when hovered */
 }
 
 .cta-section {
   margin: 2rem 0;
+  position: relative;
+  bottom: 20vh;
+  height: 10vh;
 }
 
-.steam-button {
-  background: linear-gradient(45deg, #1b2838, #2a475e);
-  color: white;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
 
-.steam-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(45deg, #2a475e, #1b2838);
-}
-
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-}
-
-.footer a {
-  color: #ffd700;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #ffffff;
-}
 
 @media (max-width: 768px) {
   .header {

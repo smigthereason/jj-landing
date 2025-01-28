@@ -2,13 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="preload" href="/path-to-font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Vite + React</title>
+    
+    <!-- Preload Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Preload Fonts -->
+    <link rel="preload" href="/path-to-font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+    <!-- SEO Metadata -->
+    <meta name="description" content="A Vite and React application for high performance." />
+    
+    <!-- Color Scheme -->
+    <meta name="theme-color" content="#ffffff" />
+    
+    <!-- Optimize Rendering -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Text Contrast -->
+    <div id="root" role="main"></div>
+    
+    <!-- Modern Script -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
