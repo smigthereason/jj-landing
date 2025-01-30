@@ -7,7 +7,7 @@ const Offers = () => {
       <div className="black-box" />
       <img
         className="background-image"
-        src="/Images/top-bouncer.jpg"
+        src="/Images/top-bouncer.webp"
         alt="hero1"
       />
       <div className="overlay" />

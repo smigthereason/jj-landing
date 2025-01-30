@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./LandingPage.css";
 import Button from "./components/Button";
 import Offer from "./components/Offer";
-import { handleClick } from "./components/eventHandlers";
+
 
 const LandingPage = () => {
   const [timeLeft, setTimeLeft] = useState(0);
@@ -38,56 +38,57 @@ const LandingPage = () => {
 
   return (
     <div className="landing-container" id="1">
-      <header className="header">
-        <div className="logo">
-          <h1>Jumping</h1>
-          <h2>JACK</h2>
-        </div>
-        <div className="promo">🔥Jump High, Earn $100</div>
-        <div className="timer">{formatTime(timeLeft)} SEC</div>
-      </header>
+
+
+      <header className="bg-[#2D0A31] px-2 md:px-6 py-3  flex justify-between items-center gap-2">
+      {/* Logo Section */}
+      <div className="flex flex-col leading-none">
+      <h1 className="gradient-text rotate-text text-lg  md:text-4xl font-bold tracking-wide origin-bottom-left">Jumping</h1>
+      <h2 className="gradient-text rotate-text text-lg md:text-4xl font-extrabold tracking-wider origin-bottom-left">JACK</h2>
+      </div>
+
+      {/* Promo Text */}
+      <div className="text-white text-sm md:text-2xl font-bold ml-1">🔥Jump High, Earn $100</div>
+
+      {/* Timer */}
+      <div className="flex items-baseline timer">
+        <span className="text-[#FFE135] text-xs md:text-4xl  font-bold md:tracking-wider">
+        {formatTime(timeLeft)}
+        </span>
+        <span className="text-[#FFE135] text-xs ml-1 font-medium">SEC</span>
+      </div>
+    </header>
+
+
+
       <div className="main-content">
         <img
           className="title-image"
-          src="./Images/title-fotor.png"
+          src="./Images/title-fotor.webp"
           alt="Game Title"
         />
         <div>
           <img
             className="jack-image"
-            src="./Images/jack3-fotor.png"
+            src="./Images/jack3-fotor.webp"
             alt="Jumping Jack Character"
           />
         </div>
-        <div className="video-frame">
-          <img
-            className="frame-image"
-            src="./Images/frame-fotor.png"
-            alt="Video Frame"
-          />
-          <img
-            className="place-image"
-            src="./Images/placeholder.jpeg"
-            alt="Game Preview"
-          />
-          <button className="play-button" onClick={handleClick}>
-            <img
-              className="b-image"
-              src="./Images/ytbutton.png"
-              alt="Play Video"
-            />
-          </button>
 
-          <video
-            className="hover-video"
-            src="/Images/jumpingjacklanding.mp4"
-            muted
-            loop
-            playsInline
-            autoPlay
-            aria-label="Game Trailer"
-          />
-        </div>
+<div className="video-frame">
+  <div
+    className="max-w-4xl mx-auto"
+  >
+    <div className="border-8 border-[#B8860B] rounded-lg overflow-hidden">
+      <img
+        className="w-full h-auto object-cover"
+        src="/Images/jumping-jack-video.webp"
+        alt="Jumping Jack Animation"
+      />
+    </div>
+  </div>
+</div>
+
         <div className="cta-section">
           <Button />
         </div>

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useCallback, useState } from 'react';
+import { createContext, useContext, useEffect, useCallback, useState } from 'react';
 
 // Configuration constants
 const MAX_BUFFER_SIZE = 10;
