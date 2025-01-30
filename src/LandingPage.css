@@ -7,12 +7,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url("/Images/jack.jpeg");
+  background-image: url("/Images/jack.webp");
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
   margin: 0;
-  padding: 0;
+  padding: 2px;
   position: relative;
 }
 
@@ -26,15 +26,29 @@
   height: 8vh;
 }
 
-.logo {
+/* .logo {
   position: absolute;
   top: 0.4vh;
   max-height: 5vh;
   font-family: "Luckiest Guy", serif;
   font-weight: bold;
   transform: rotate(-20deg);
+  color: linear-gradient(45deg, #ff6b6b, #ffd93d);
+} */
+
+.gradient-text {
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
-.logo h2 {
+
+.rotate-text {
+  transform: rotate(-10deg);
+}
+
+/* .logo h2 {
   position: relative;
   top: -11vh;
   font-size: 3rem;
@@ -52,7 +66,7 @@
   background: linear-gradient(45deg, #ff6b6b, #ffd93d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
 
 .promo {
   position: absolute;
@@ -65,14 +79,15 @@
 }
 
 .timer {
-  position: absolute;
+  /* position: absolute;
   left: 80vw;
   font-family: monospace;
   font-size: 1.2rem;
   background: rgba(0, 0, 0, 0.3);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem; */
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.171);
 }
 
 .main-content {
@@ -128,46 +143,7 @@
   border-radius: 3%;
 }
 
-.b-image {
-  top: 50%;
-  left: 50%;
-  width: 10vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 200; /* Increased z-index to ensure it's on top of the video */
-}
 
-.b-image:hover {
-  opacity: 1;
-}
-
-.video-frame:hover .place-image {
-  opacity: 0;
-}
-
-.hover-video {
-  position: absolute;
-  top: 1vh;
-  left: 1.5vw;
-  width: 95%;
-  height: 95%;
-  object-fit: cover;
-  z-index: 150;
-  border-radius: 3%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.video-frame:hover .hover-video {
-  opacity: 1;
-}
-
-.video-frame:hover .b-image {
-  z-index: 250; /* Ensure the play button is on top when hovered */
-}
 
 .cta-section {
   margin: 2rem 0;
@@ -179,7 +155,7 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .landing-container {
-    background-image: url("/Images/jack.jpeg");
+    background-image: url("/Images/jack.webp");
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat;
@@ -213,14 +189,7 @@
     top: 12vh;
   }
 
-  .timer {
-    position: relative;
-    width: 50vw;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    top: 16vh;
-    left: 30vw;
-  }
+
 
   .main-content {
     gap: 1rem;
